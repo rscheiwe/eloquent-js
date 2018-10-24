@@ -1,7 +1,7 @@
 function stepTriangle(n) {
 
     let triangle = ''
-    
+
     if (isNaN(n)) {
         return 'Please enter an integer'
     }
@@ -21,12 +21,12 @@ function stepTriangle(n) {
   
   describe('stepTriangle()', () => {
     test('test 5-level triangle', () => {
-        expect(stepTriangle(5)).toBe('#\n##\n###\n####\n#####')
+        expect(stepTriangle(5)).toMatch(/#\n##\n###\n####\n#####/)
     })
     test('test 6-level triangle', () => {
-        expect(stepTriangle(6)).toBe('#\n##\n###\n####\n#####\n######')
+        expect(stepTriangle(6)).toMatch(/#\n##\n###\n####\n#####\n######/)
     })
     test('test non-integer', () => {
-        expect(stepTriangle('k')).toBe('Please enter an integer')
+        expect(stepTriangle('k')).toMatch(/Please enter an integer/)
     })
   })
